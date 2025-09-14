@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">完成</view>
+</cu-custom>
+
+<view class="note">
+  <textarea 
+  class="note-area" 
+  disabled="{{!editable}}"
+  placeholder-class="area-holder"
+  maxlength="-1"
+  auto-focus
+  placeholder="请输入笔记" 
+  value="{{note.content}}"
+  bindinput="exam"
+  bindblur="input" />
+</view>

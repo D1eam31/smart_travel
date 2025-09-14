@@ -1,0 +1,75 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+</cu-custom>
+
+<view class="container">
+  <view class="head">
+    <image class="icon" src="../../../images/spot.png" mode="aspectFill"></image>
+    <text class="title">景点详情</text>
+  </view>
+
+  <view class="column-input">
+    <text class="title">景点名称</text>
+    <input
+    class="input {{editable ? '' : 'disabled'}}"
+    disabled="{{!editable}}"
+    value="{{spot.name}}"
+    placeholder="请输入景点名称"
+    data-type="name"
+    bindinput="getSuggestion"
+    bindblur="input"/>
+    <view class="suggestion {{showSug ? 'sug-active' : ''}}">
+      <view class="item" hover-class="click-sug" 
+      wx:for="{{suggestion}}" wx:for-item="sug" wx:key="index"
+      data-index="{{index}}" bindtap="enterSug">
+        <text class="title">{{sug.title}}</text>
+        <text class="addr">{{sug.addr}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="column-input">
+    <text class="title">景点位置</text>
+    <view class="place-input">{{spot.place}}</view>
+  </view>
+
+  <view class="more {{more ? 'more-active' : ''}}">
+    <view class="row-input">
+      <text class="title">单人票价</text>
+      <input
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      data-type="price"
+      type="number"
+      value="{{spot.price}}"
+      bindblur="input"/>
+    </view>
+    <view class="row-input">
+      <text class="title">数量</text>
+      <input
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      data-type="num"
+      type="number"
+      value="{{spot.num}}"
+      bindblur="input"/>
+    </view>
+    <view class="column-input">
+      <text class="title">备注</text>
+      <textarea 
+      class="area"
+      disabled="{{!editable}}"
+      maxlength="-1"
+      auto-height
+      data-type="remark"
+      value="{{spot.remark}}"
+      bindinput="exam"
+      bindblur="input"/>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <text class="more-tip" bindtap="showMore">{{more ? '收起' : '查看更多>>'}}</text>
+    <button class="btn button" hover-class="click-button" wx:if="{{editable}}" bindtap="done">完成</button>
+  </view>
+</view>

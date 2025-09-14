@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-gradual-blue">
+	<view slot="content">智慧游</view>
+</cu-custom>
+
+<view class="container">
+    <view class="user">
+        <view  class="user-bg">
+            <image src="{{isLogin?user.avatarUrl:'../../images/user-bg.png'}}" mode="widthFix"></image>
+        </view>
+        <image class="user-image" src="{{isLogin?user.avatarUrl:'../../images/user-bg.png'}}" mode="scaleToFill"></image>
+        <view class="user-msg">
+            <text>{{isLogin?user.nickName:'您尚未登录，请先登录'}}</text>
+        </view>
+        <button class="login-button" wx:if="{{!isLogin}}" bindtap="toLogin">去登录</button>
+    </view>
+
+    <view class="func">
+        <view class="func-item" hover-class="func-item-hover" data-cur-func='problem' bindtap="tapList">
+            <text class="func-icon cuIcon-question text-blue"></text>
+            <text class="func-text text-black">问题反馈</text>
+            <text class="func-right cuIcon-right text-blue"></text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,96 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+</cu-custom>
+
+<view class="container">
+  <view class="head">
+    <image class="icon" src="../../../images/transport.png" mode="aspectFill"></image>
+    <text class="title">交通详情</text>
+  </view>
+
+  <view class="column-input">
+    <text class="title">选择交通工具</text>
+    <view class="choices">
+      <view class="item" data-trans="plane" bindtap="{{editable ? 'chooseTrans' : ''}}">
+        <image class="icon {{transport.name == '飞机' ? 'trans-active' : ''}}" src="../../../images/transport_plane.png" mode="aspectFill"></image>
+        <text class="intro">飞机</text>
+      </view>
+      <view class="item" data-trans="train" bindtap="{{editable ? 'chooseTrans' : ''}}">
+        <image class="icon {{transport.name == '高铁' ? 'trans-active' : ''}}" src="../../../images/transport_train.png" mode="aspectFill"></image>
+        <text class="intro">高铁</text>
+      </view>
+      <view class="item" data-trans="taxi" bindtap="{{editable ? 'chooseTrans' : ''}}">
+        <image class="icon {{transport.name == '打车' ? 'trans-active' : ''}}" src="../../../images/transport_taxi.png" mode="aspectFill"></image>
+        <text class="intro">打车</text>
+      </view>
+      <view class="item" data-trans="other" bindtap="{{editable ? 'chooseTrans' : ''}}">
+        <image class="icon {{transport.name == '其他' ? 'trans-active' : ''}}" src="../../../images/transport_other.png" mode="aspectFill"></image>
+        <text class="intro">其他</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="column-input">
+    <text class="title">出发地</text>
+    <input
+    class="input {{editable ? '' : 'disabled'}}"
+    disabled="{{!editable}}"
+    data-type="startPlace"
+    value="{{transport.startPlace}}"
+    bindinput="exam"
+    bindblur="input"
+    placeholder="请输入出发地"/>
+  </view>
+
+  <view class="column-input">
+    <text class="title">目的地</text>
+    <input
+    class="input {{editable ? '' : 'disabled'}}"
+    disabled="{{!editable}}"
+    data-type="endPlace"
+    value="{{transport.endPlace}}"
+    bindinput="exam"
+    bindblur="input"
+    placeholder="请输入出发地"/>
+  </view>
+
+  <view class="more {{more ? 'more-active' : ''}}">
+    <view class="row-input">
+      <text class="title">单人票价</text>
+      <input
+      type="number"
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      data-type="price"
+      value="{{transport.price}}"
+      bindblur="input"/>
+    </view>
+    <view class="row-input">
+      <text class="title">数量</text>
+      <input
+      type="number"
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      data-type="num"
+      value="{{transport.num}}"
+      bindblur="input"/>
+    </view>
+    <view class="column-input">
+      <text class="title">备注</text>
+      <textarea 
+      class="area" 
+      disabled="{{!editable}}"
+      maxlength="-1"
+      auto-height
+      data-type="remark"
+      value="{{transport.remark}}"
+      bindinput="exam"
+      bindblur="input"/>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <text class="more-tip" bindtap="showMore">{{more ? '收起' : '查看更多>>'}}</text>
+    <button class="btn button" hover-class="click-button" wx:if="{{editable}}" bindtap="done">完成</button>
+  </view>
+</view>

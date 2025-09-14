@@ -1,0 +1,34 @@
+<cu-custom bgColor="bg-gradual-blue">
+	<view slot="content">智慧游</view>
+</cu-custom>
+
+<view class="hisplan" wx:if="{{planIndex.length != 0}}">
+    <view class="hiscon" wx:for="{{planIndex}}" wx:key="index">
+        <image class="plan-img" src="{{item.planImg}}" mode="scaleToFill"></image>
+        <view class="plan-msg padding-xl text-white" hover-class="his-hover" data-index="{{index}}"  bindtap="planDetail">
+            <view class="plan-place">
+                {{item.place}}之旅
+            </view>
+            <view class="plan-time">
+                {{item.startTime}} to {{item.endTime}} 共 {{item.days}} 天
+            </view>
+        </view>
+        <text class="plan-createtime">{{item.createTime}}创建</text>
+        <view class="plan-button" hover-class="plan-button-hover" data-index="{{index}}" bindtap="deletePlan">
+            <image src="../../images/delete.png" mode="scaleToFill"></image>
+        </view>
+    </view>
+    <button class="create-plan-button button" hover-class="click-button" bindtap="createPlan">
+        <text>创建行程</text>
+    </button>
+</view>
+
+<view class="no-plan" wx:else>
+    <text class="text">去哪玩o(*￣▽￣*)ブ</text>
+    <view class="index-img">
+        <image class="img" src="../../images/fengmian.png" mode="scaleToFill"></image>
+    </view>
+    <button class="create-plan-button button" hover-class="click-button" bindtap="createPlan">
+        <text>创建行程</text>
+    </button>
+</view>

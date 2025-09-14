@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+	<view slot="content">问题反馈</view>
+</cu-custom>
+
+<view class="problem">
+    <view class="problem-tip">
+        <view>感谢您的耐心反馈！</view>
+        <view>我们会不断完善功能！</view>
+    </view>
+    <view class="textarea">
+        <textarea
+        style="height: 200rpx;width:100%;padding:20rpx"
+        placeholder="bug 在哪里呀 bug 在哪里~"
+        auto-focus
+        bindinput="getProblem" />
+    </view>
+    <view class="connect">
+        <text class="con-tip">联系方式:</text>
+        <input
+        class="input"
+        placeholder="邮箱"
+        bindinput="getConnect"/>
+    </view>
+    <button class="pro-button button" hover-class="click-button" bindtap="submitProblem">
+        <text>提交反馈</text>
+    </button>
+</view>

@@ -1,0 +1,73 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+</cu-custom>
+
+<view class="container">
+  <view class="head">
+    <image class="icon" src="../../../images/hotel.png" mode="aspectFill"></image>
+    <text class="title">住宿详情</text>
+  </view>
+
+  <view class="column-input">
+    <text class="title">住宿名称</text>
+    <input
+    class="input {{editable ? '' : 'disabled'}}"
+    disabled="{{!editable}}"
+    placeholder="请输入住宿名称"
+    data-type="name"
+    value="{{hotel.name}}"
+    bindinput="exam"
+    bindblur="input"/>
+  </view>
+
+  <view class="column-input">
+    <text class="title">住宿时间</text>
+    <view class="cal">
+      <calendar
+      disabled="{{!editable}}"
+      bindmyevent="{{editable ? 'listener' : ''}}"
+      maxtime="{{days}}"
+      in-time="{{hotel.startTime}}"
+      out-time="{{hotel.endTime}}"/>
+    </view>
+  </view>
+
+  <view class="more {{more ? 'more-active' : ''}}">
+    <view class="row-input">
+      <text class="title">单间房价</text>
+      <input
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      type="number"
+      data-type="price"
+      value="{{hotel.price}}"
+      bindblur="input"/>
+    </view>
+
+    <view class="row-input">
+      <text class="title">数量</text>
+      <input
+      class="input {{editable ? '' : 'disabled'}}"
+      disabled="{{!editable}}"
+      type="number"
+      data-type="num"
+      value="{{hotel.num}}"
+      bindblur="input"/>
+    </view>
+    <view class="column-input">
+      <text class="title">备注</text>
+      <textarea 
+      class="area"
+      disabled="{{!editable}}"
+      data-type="remark"
+      value="{{hotel.remark}}"
+      bindinput="exam"
+      bindblur="input"/>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <text class="more-tip" bindtap="showMore">{{more ? '收起' : '查看更多>>'}}</text>
+    <button class="btn button" hover-class="click-button" wx:if="{{editable}}" bindtap="done">完成</button>
+  </view>
+</view>

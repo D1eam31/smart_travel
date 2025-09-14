@@ -1,0 +1,61 @@
+@import "../edit.wxss";
+
+.suggestion{
+  position: relative;
+  top: 10rpx;
+  height: 0rpx;
+  overflow: hidden;
+  transition: height 1s ease-in-out;
+  border-radius: 10rpx;
+}
+
+.sug-active{
+  height: auto;
+  box-shadow: 0 0 10rpx 2rpx rgba(0,0,0,0.1);
+}
+
+.click-sug{
+  background-color: whitesmoke;
+}
+
+.suggestion .item{
+  height: 100rpx;
+  padding: 0 20rpx;
+  position: relative;
+}
+
+.suggestion .item:after{
+  content: '';
+  position: absolute;
+  top: 99rpx;
+  left: 20rpx;
+  height: 1rpx;
+  width: calc(100% - 40rpx);
+  background-color: rgba(0,0,0,0.1);
+}
+
+.suggestion .title{
+  font-size: 1em;
+  display: block;
+  padding-top: 13rpx;
+}
+
+.suggestion .addr{
+  font-size: .9em;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: grey;
+}
+
+.place-input{
+  border: 1rpx solid grey;
+  border-radius: 6rpx;
+  margin-top: 10rpx;
+  line-height: 60rpx;
+  min-height: 70rpx;
+  word-wrap: break-all;
+  padding: 15rpx 20rpx;
+}
