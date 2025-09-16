@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+	<view slot="content">登录智慧游</view>
+</cu-custom>
+
+<view class="login-container">
+    <view class="brand-atmosphere">
+        <image class="app-logo" mode="widthFix" src="{{logoUrl}}"></image>
+        <view class="app-title">{{title}}</view>
+    </view>
+    <view class="functional-part">
+        <block wx:for="{{descriptions}}" wx:key="index">
+            <view class="app-description">{{item}}</view>
+        </block>
+    </view>
+    <button 
+    class="action-area button"
+    hover-class="click-button" 
+    type="primary" 
+    open-type="getUserInfo" 
+    bindgetuserinfo="getUserInfo"
+    catchtap="onTap" 
+    disabled="{{isLogin}}">
+        微信用户授权登录
+    </button>
+</view>

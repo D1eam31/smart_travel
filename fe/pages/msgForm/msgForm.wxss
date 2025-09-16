@@ -1,0 +1,105 @@
+.msgform{
+    padding: 0rpx 30rpx;
+}
+
+.place,.time{
+    padding: 40rpx 34rpx 30rpx;
+    background-color: white;
+    border-radius: 12rpx;
+    
+}
+
+.place{
+    margin-top: 38rpx;
+}
+
+.time{
+    margin-top: 35rpx;
+}
+
+.place-title,.time-title{
+    padding-bottom: 25rpx;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-icon{
+    background-color: #479ae7;
+    line-height: 56rpx;
+    width: 56rpx;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 1em;
+}
+
+.place-msg,.time-msg{
+    margin-top: 10rpx;
+    font-size: 1.1em;
+    color: #477fe7;
+}
+
+.place-msg .msg-1:after{
+    font-size: .9em;
+    content: '省';
+    color: grey;
+    margin-left: 6rpx;
+    margin-right: 30rpx;
+}
+
+.place-msg .msg-2:after{
+    font-size: .9em;
+    content: '市';
+    color: grey;
+    margin-left: 6rpx;
+}
+
+.time-msg{
+    padding-bottom: 20rpx;
+    border-style: none none solid;
+    border-width: 1rpx;
+    border-color: rgba(0,0,0,0.2);
+}
+
+.time-msg .msg-1:after{
+    content: '到';
+    margin: 0rpx 20rpx;
+    color: grey;
+    font-size: .9em;
+}
+
+.time-msg .msg-3:before{
+    content: '共';
+    margin-left: 20rpx;
+    margin-right: 10rpx;
+    color: grey;
+    font-size: .9em;
+}
+
+.time-msg .msg-3:after{
+    content: '天';
+    margin-left: 10rpx;
+    color: grey;
+    font-size: .9em;
+}
+
+.next{
+    height:80rpx;
+    width:500rpx;
+    margin:auto;
+    margin-top: 60rpx;
+    margin-bottom: 40rpx;
+    border-radius: 10rpx;
+    font-size: 18px;
+}
+
+.next-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+}

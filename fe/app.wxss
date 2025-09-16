@@ -1,0 +1,15 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+page{
+  font-size: 34rpx;
+}
+
+.button{
+  background-color: #477fe7!important;
+  color: white!important;
+}
+
+.click-button{
+  opacity: 0.8;
+}

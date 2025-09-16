@@ -1,0 +1,54 @@
+.login-container,
+.brand-atmosphere,
+.functional-part,
+.action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.brand-atmosphere,
+.functional-part {
+    margin-bottom: 8.45rpx;
+}
+
+.app-logo {
+    width: 152.17rpx; /* logo大小 */
+    height: 152.17rpx !important;
+    border-radius: 50%;
+    background-color: #999;
+    background-size: 100%;
+    margin: 182.37rpx 0 32.61rpx 0;
+}
+
+.app-title {
+    font-size: 34.42rpx;
+    font-weight: 500;
+    color: #333;
+    line-height: 34.42rpx;
+    margin-bottom: 31.4rpx;
+}
+
+.functional-part {
+    padding-top: 40rpx;
+    padding-bottom: 72.46rpx;
+}
+
+.app-description {
+    font-size: 25.36rpx;
+    color: #999;
+    line-height: 1;
+    margin-bottom: 16.3rpx;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.action-area {
+    width: 600rpx;
+    margin-top: 60rpx;
+}

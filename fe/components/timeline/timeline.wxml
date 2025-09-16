@@ -1,0 +1,40 @@
+<view class="timeline">
+      <!-- 天数选择 -->
+    <view class="head">
+        <text class="text">第{{dayArr[dayIndex]}}天</text>
+        <view class="tabs">
+            <view class="tab {{index === dayIndex ? 'tab-active' : ''}}" 
+            wx:for="{{dayArr}}" wx:key="index"
+            data-day="{{index}}" catchtap="changeDay">D{{item}}</view>
+        </view>
+    </view>
+    <!-- 列表项 -->
+    <view class="items" wx:if="{{planInfo[dayIndex].length != 0}}">
+        <view class="{{item.type}} item" id="{{index === 0 ? 'demo' : ''}}"
+        wx:for="{{planInfo[dayIndex]}}" wx:key="index"
+        style="transform: translateY({{longpress && touchIndex === index ? transY : item.transY}}px); transition: transform 0.2s;">
+            <view class="circle"></view>
+            <view class="card {{longpress ? 'card-active' : ''}}" hover-class="card-hover" 
+            data-index="{{index}}"
+            bindtouchstart="listTouchStart" catchtouchmove="{{longpress ? 'listTouchMove' : ''}}" catchtouchend="listTouchEnd"
+            bindlongpress="longPress">
+                <view class="content {{slide && touchIndex === index ? 'delete-active' : ''}}">
+                    <text class="icon cuIcon-goods text-grey"></text>
+                    <text class="note" wx:if="{{item.type === 'note'}}">{{item.content}}</text>
+                    <text class="name" wx:elif="{{item.name != ''}}">{{item.name}}</text>
+                    <text wx:else>
+                        <text class="name" wx:if="{{item.type === 'transport'}}">添加交通</text>
+                        <text class="name" wx:if="{{item.type === 'spot'}}">添加景点</text>
+                        <text class="name" wx:if="{{item.type === 'hotel'}}">添加住宿</text>
+                        <text class="name" wx:if="{{item.type === 'restaurant'}}">添加餐馆</text>
+                    </text>
+                </view>
+                <view class="delete {{slide && touchIndex === index ? 'delete-active' : ''}}" data-delete='delete' catchtouchstart="deleteItem">删除</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="no-item" wx:else>
+        今天随便逛逛吧~
+    </view>
+</view>

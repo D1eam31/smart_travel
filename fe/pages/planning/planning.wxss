@@ -1,0 +1,387 @@
+.container{
+    padding-bottom: 120rpx;
+}
+
+.plan-img{
+    width: 100%;
+    height: 380rpx;
+    position: relative;
+    margin: 0rpx auto;
+}
+
+.plan-img:before{
+    content: '';
+    width: 100%;
+    height: 380rpx;
+    position:absolute;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.plan-img .img{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.plan-img .content{
+    position: absolute;
+    width: 500rpx;
+    height: 150rpx;
+    top: 170rpx;
+    left: 40rpx;
+    color: white;
+    z-index: 1;
+}
+
+.btn-img,.btn-next{
+    position: absolute;
+    width: 55rpx;
+    height: 55rpx;
+    top: 218rpx;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: rgb(180, 176, 176);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-img{
+    right: 50rpx;
+}
+
+.btn-next{
+    right: 130rpx;
+}
+
+.btn-img .icon{
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.btn-next .icon{
+    width: 33rpx;
+    height: 33rpx;
+}
+
+.plan-img .content .title{
+    display: block;
+    font-size: 1.6em;
+}
+
+.plan-img .content .time{
+    display: block;
+    position: absolute;
+    padding-left: 20rpx;
+    font-size: 0.9em;
+    margin-top: 5rpx;
+}
+
+.plan-img .content .time:before{
+    content: '';
+    width: 10rpx;
+    height: 26rpx;
+    background-color: rgb(57, 219, 192);
+    position: absolute;
+    left: 0;
+    top: 9rpx;
+}
+
+.planning{
+    position: relative;
+    top: -35rpx;
+    border-radius: 35rpx 35rpx 0 0;
+    padding: 30rpx 33rpx;
+    background-color: #efeff1;
+}
+
+.plan-title{
+    font-size: 1.1em;
+    margin-bottom: 30rpx;
+}
+
+.plan-title .icon,.diy-title .icon{
+    padding-right: 15rpx;
+}
+
+.recommand{
+    width: 100%;
+    height: 220rpx;
+    display: flex;
+    padding: 10rpx;
+    margin-bottom: 40rpx;
+    border-radius: 14rpx;
+    box-shadow: 0 0 20rpx 2rpx rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+}
+
+.recommend .intro-msg{
+    margin-top: 20rpx;
+}
+
+.click-recommand{
+    background-color: whitesmoke;
+}
+
+.intro-img{
+    width: 40%;
+    height: 100%;
+    margin-right: 20rpx;
+    border-radius: 14rpx;
+}
+
+.intro-msg{
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 20rpx;
+}
+
+.intro-msg .title{
+    font-size: 1.2em;
+}
+
+.intro-msg .nav{
+    color: #477fe7;
+}
+
+.diy-title{
+    margin-bottom: 15rpx;
+    font-size: 1.1em;
+}
+
+.no-item{
+    line-height: 150rpx;
+    margin: 5rpx;
+    padding-left: 40rpx;
+    background-color: white;
+    border-radius: 12rpx;
+}
+
+.mask-active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.add{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    box-shadow: 0 6rpx 15rpx 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 150rpx;
+    right: 50rpx;
+    background-color: #5c91f5;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-active{
+    background-color: #7096dd;
+}
+
+.edit .transport,.edit .spot,.edit .hotel,.edit .restaurant,.edit .remark{
+    visibility: hidden;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 10rpx 0 rgba(0,0,0,0.2);
+    position: fixed;
+    right: 60rpx;
+    bottom: 153rpx;
+    background-color: white;
+    z-index: 999;
+    transition: bottom 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit .transport-active,.edit .spot-active,.edit .hotel-active,.edit .restaurant-active,.edit .remark-active{
+    visibility: visible;
+}
+
+.edit .icon{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+
+.edit .transport-active{
+    bottom: 290rpx;
+}
+
+.edit .spot-active{
+    bottom: 410rpx;
+}
+
+.edit .hotel-active{
+    bottom: 530rpx;
+}
+
+.edit .restaurant-active{
+    bottom: 650rpx;
+}
+
+.edit .remark-active{
+    bottom: 770rpx;
+}
+
+.edit .transport:before,.edit .spot:before,.edit .hotel:before,.edit .restaurant:before,.edit .remark:before{
+    content: ' ';
+    visibility: hidden;
+    width: 80rpx;
+    line-height: 80rpx;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .9em;
+    position: fixed;
+    right: 60rpx;
+    bottom: 150rpx;
+    background-color: whitesmoke;
+    border-radius: 8rpx;
+    z-index: 999;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.edit .transport-active:before,.edit .spot-active:before,.edit .hotel-active:before,.edit .restaurant-active:before,.edit .remark-active:before{
+    visibility: visible;
+    width: 150rpx;
+    line-height: 60rpx;
+    right: 200rpx;
+    background-color: whitesmoke;
+    border-radius: 8rpx;
+    z-index: 999;
+}
+
+.edit .transport-active:before{
+    content: '添加交通';
+    bottom: 299rpx;
+}
+
+.edit .spot-active:before{
+    content: '添加景点';
+    bottom: 419rpx;
+}
+
+.edit .hotel-active:before{
+    content: '添加住宿';
+    bottom: 539rpx;
+}
+
+.edit .restaurant-active:before{
+    content: '添加餐馆';
+    bottom: 659rpx;
+}
+
+.edit .remark-active:before{
+    content: '添加笔记';
+    bottom: 779rpx;
+}
+
+.budget{
+    position: fixed;
+    width: 100%;
+    height: 0;
+    bottom: 100rpx;
+    background-color: whitesmoke;
+    transition: height 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.budget .head{
+    width: 100%;
+    height: 80rpx;
+    background-color: rgb(83, 168, 194);
+    padding: 20rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.budget .head .total{
+    color: rgb(172, 132, 48);
+}
+
+.budget .head .btn{
+    display: block;
+    color: #406cbd;
+    height: 100%;
+    width: 90rpx;
+}
+
+.budget .block .title{
+    line-height: 70rpx;
+    background-color: rgb(199, 204, 204);
+}
+
+.budget .row{
+    line-height: 55rpx;
+    width: 100%;
+}
+
+.budget .col-left{
+    padding: 10rpx 30rpx;
+    display: inline-block;
+    width: 65%;
+    height: 100%;
+    border-width: 2rpx;
+    border-style: none solid solid none;
+    border-color: rgb(149, 155, 154);
+}
+
+.budget .col-right{
+    padding: 10rpx 30rpx;
+    text-align: center;
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    border-width: 2rpx;
+    border-style: none none solid none;
+    border-color: rgb(149, 155, 154);
+}
+
+.navbar{
+    height:100rpx;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1em;
+    color:#6495ED;
+    z-index: 99;
+}
+
+.bar-item-left,.bar-item-right{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height:100%;
+}
+
+.bar-item-left{
+    border-width:1rpx 1rpx 0rpx 0rpx;
+    border-style: solid;
+    border-color: #f4f4f4;
+}
+
+.bar-item-right{
+    border-width:1rpx 0rpx 0rpx 1rpx;
+    border-style: solid;
+    border-color: #f4f4f4;
+}
+
+.bar-hover{
+    background-color: whitesmoke;
+}

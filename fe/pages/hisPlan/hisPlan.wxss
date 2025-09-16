@@ -1,0 +1,196 @@
+.hisplan,.no-plan{
+    background-color: white;
+    height: 100vh;
+    z-index: -2;
+}
+
+.hisplan{
+    margin-top: 4rpx;
+}
+
+.hiscon{
+    width:100%;
+    height:380rpx;
+    position:relative;
+    margin-bottom:10rpx;
+    border-radius:10rpx;
+}
+
+.plan-img{
+    width:100%;
+    height:380rpx;
+    position: absolute;
+    top:0rpx;
+    border-radius:10rpx;
+    z-index:1;
+}
+
+.plan-createtime{
+    position: absolute;
+    top:0rpx;
+    right:0rpx;
+    font-size:14px;
+    color:white;
+    background-color:#be5403;
+    border-bottom-left-radius: 10rpx;
+    padding:10rpx;
+    opacity: 0.8;
+    text-shadow: 0rpx 0rpx 10rpx grey;
+    z-index: 99;
+}
+
+.his-hover{
+    opacity: 0.8;
+}
+
+.plan-msg{
+    position: absolute;
+    z-index: 2;
+    height:380rpx;
+    width:100%;
+    padding-top:170rpx;
+    border-radius:10rpx;
+    text-shadow: 0rpx 0rpx 10rpx grey;
+}
+
+.plan-msg::after{
+    content:'';
+    height:380rpx;
+    width:100%;
+    position: absolute;
+    top:0rpx;
+    left:0rpx;
+    background-color: black;
+    opacity: 0.3;
+    z-index:-1;
+    border-radius:10rpx;
+}
+
+.plan-place{
+    font-size:22px;
+}
+
+.plan-time{
+    margin-top:15rpx;
+    font-size:16px;
+}
+
+.plan-button-hover{
+    opacity: 0.8;
+}
+
+.plan-button{
+    position: absolute;
+    bottom:15rpx;
+    right:15rpx;
+    width:80rpx;
+    height:80rpx;
+    background: rgb(175, 166, 166);
+    border-radius: 50%;
+    display: flex;
+    z-index:5;
+}
+
+.plan-button image{
+    width:60%;
+    height:60%;
+    margin:auto;
+}
+
+.no-plan{
+    display:flex;
+    flex-direction: column;
+}
+
+.no-plan .text{
+    font-size: 1.6em;
+    margin: 50rpx 125rpx;
+    margin-bottom: 100rpx;
+}
+
+.index-img{
+    height: 720rpx;
+    width: 540rpx;
+    margin: 0rpx auto;
+}
+
+.index-img .img{
+    width: 100%;
+    height: 80%;
+}
+
+.create-plan-button{
+    height: 85rpx;
+    width:60%;
+    margin:50rpx auto;
+    color:white;
+}
+
+.star-dialog{
+    font-size:18px!important;
+    width:80%!important;
+}
+
+.star-title{
+    font-size:22px!important;
+}
+
+.star-content{
+    padding:30rpx;
+    margin-bottom:2px;
+}
+
+.star-button{
+    font-size:20px;
+}
+
+.star-button-item{
+    width:50%;
+    display:flex;
+    justify-content: center!important;
+    align-items: center;
+    background-color: white;
+}
+
+.modal-mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.4;
+    overflow: hidden;
+    z-index: 300;
+}
+
+.modal-dialog{
+    width: 100%;
+    height: 400rpx;
+    position: fixed;
+    top: calc(50% - 150rpx);
+    left: 0;
+    background: #fff;
+    overflow: hidden;
+    z-index: 400;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dialog-item{
+    height: 250rpx;
+    width: 250rpx;
+    border-radius: 30rpx;
+    line-height: 250rpx;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.modal-dialog .item-1{
+    background-color: rgba(92, 178, 248, 0.863);
+}
+
+.modal-dialog .item-2{
+    background-color: rgb(83, 228, 143);
+}

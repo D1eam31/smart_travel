@@ -1,0 +1,93 @@
+
+.date-content {
+    width: 100%;
+    background: white;
+}
+
+.top {
+    margin-top: 20rpx;
+    position: relative;
+    line-height: 88rpx;
+}
+
+.year-month {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.right,.left{
+    position: absolute;
+    width: 100rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: .85em;
+    color: #188bff;
+}
+
+.left{
+    top: 0rpx;
+    left: 10rpx;
+}
+
+.right{
+    top: 0rpx;
+    right: 10rpx;
+}
+
+.bclick{
+    background: whitesmoke;
+}
+
+.title .title-text{
+    display: inline-block;
+    width: 14.285%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.title .weekMark{
+    color: #ffb937;
+}
+
+.content {
+    width: 100%;
+}
+
+.date-content {
+    box-sizing: border-box;
+}
+
+.days {
+    position: relative;
+    width: 14.28%;
+    text-align: center;
+    display: inline-block;
+    line-height: 120rpx;
+    border-radius: 20%;
+}
+
+.day-select {
+    background: #60acf8;
+    color:white;
+}
+
+.first-selector{
+    background: #188bff;
+}
+
+.last-selector{
+    background: #188bff;
+}
+
+.not-select {
+    color: #999!important;
+}
+
+.add{
+    position: absolute;
+    width: 100%;
+    height: 20rpx;
+    text-align: center;
+    top: 38rpx;
+    font-size: .6em;
+}

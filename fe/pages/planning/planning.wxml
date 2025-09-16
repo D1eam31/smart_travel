@@ -1,0 +1,106 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+	<view slot="content">方案编辑</view>
+</cu-custom>
+
+<view class="container">
+    <!-- 方案封图 -->
+    <view class="plan-img">
+        <image class="img" src="{{planImg}}" mode="aspectFill"/>
+        <view class="content">
+            <text class="title">{{place}}之旅</text>
+            <text class="time">{{startTime}} 至 {{endTime}} 共 {{days}} 天</text>
+        </view>
+        <view class="btn-next" wx:if="{{mode === 1}}">
+            <image class="icon" bindtap="changeReco" src="../../images/planning_next.png" mode="aspectFill"></image>
+        </view>
+        <view class="btn-img" wx:if="{{mode !== 2 || mode == 2 && storeEdit}}">
+            <image class="icon" bindtap="loadImg" src="../../images/planning_img.png" mode="aspectFill"></image>
+        </view>
+    </view>
+
+    <view class="planning">
+        <!-- 方案 title -->
+        <view class="plan-title" wx:if="{{mode === 0 && showReco}}">
+            <text class="icon cuIcon-goods text-grey"></text>
+            <text>游玩方案推荐</text>
+        </view>
+
+        <!-- 推荐方案选项 -->
+        <view class="recommand" hover-class="click-recommand" bindtap="recommand" wx:if="{{mode === 0 && showReco}}">
+            <image class="intro-img" src="{{recoImg}}" mode="aspectFill"></image>
+            <view class="intro-msg">
+                <view class="title">省心路线</view>
+                <text class="nav">快速查看>></text>
+            </view>
+        </view>
+
+         <!-- 方案列表 -->
+         <view class="diy-title" wx:if="{{mode === 0}}">
+            <text class="icon cuIcon-goods text-grey"></text>
+            <text>自定义方案</text>
+         </view>
+
+         <timeline
+         wx:if="{{mode != 1 || mode == 1 && !loading}}"
+         class="timeline"
+         disabled="{{mode == 2 && !storeEdit}}"
+         bindclick="toEdit"
+         bindrefresh="getInfo"
+         plan-info="{{planInfo}}"/>
+
+         <view class="no-item" wx:else>
+            方案加载中...
+        </view>
+
+    </view>
+</view>
+
+<!-- 右侧方案编辑按钮 -->
+<view class="edit {{editBtn ? 'mask-active' : ''}}" wx:if="{{showBtn && !showBudget && mode != 2 || mode == 2 && storeEdit}}">
+    <view class="transport {{editBtn ? 'transport-active' : ''}}" hover-class="click-button" data-type="transport" bindtap="editBtn">
+        <image class="icon" src="../../images/transport.png" mode="aspectFill"></image>
+    </view>
+    <view class="spot {{editBtn ? 'spot-active' : ''}}" hover-class="click-button" data-type="spot" bindtap="editBtn">
+        <image class="icon" src="../../images/spot.png" mode="aspectFill"></image>
+    </view>
+    <view class="hotel {{editBtn ? 'hotel-active' : ''}}" hover-class="click-button" data-type="hotel" bindtap="editBtn">
+        <image class="icon" src="../../images/hotel.png" mode="aspectFill"></image>
+    </view>
+    <view class="restaurant {{editBtn ? 'restaurant-active' : ''}}" hover-class="click-button" data-type="restaurant" bindtap="editBtn">
+        <image class="icon" src="../../images/restaurant.png" mode="aspectFill"></image>
+    </view>
+    <view class="remark {{editBtn ? 'remark-active' : ''}}" hover-class="click-button" data-type="note" bindtap="editBtn">
+        <image class="icon" src="../../images/note.png" mode="aspectFill"></image>
+    </view>
+    <view class="add {{editBtn ? 'add-active' : ''}}" hover-class="click-button" bindtap="editBtn">
+        <image class="icon" wx:if="{{!editBtn}}" src="../../images/planning_more.png" mode="aspectFill"></image>
+        <image class="icon" wx:else src="../../images/planning_less.png" mode="aspectFill"></image>
+    </view>
+</view>
+
+<!-- 底部导航栏 -->
+<view class="navbar">
+    <view class="bar-item-left" bindtap="showBudget" hover-class="bar-hover">查看预算</view>
+    <view class="bar-item-right" wx:if="{{mode != 2}}" bindtap="storePlan" hover-class="bar-hover">收藏方案</view>
+    <view class="bar-item-right" wx:else bindtap="{{storeEdit ? 'storePlan' : 'editPlan'}}" hover-class="bar-hover">{{storeEdit ? '保存编辑' : '编辑方案'}}</view>
+</view>
+
+<!-- 查看预算 -->
+<scroll-view class="budget" scroll-y style="{{showBudget ? 'height:' + budgetHeight + 'px' : ''}}">
+    <view class="head">
+        <text class="total">总计：{{total}}元</text>
+        <text class="btn" bindtap="closeBudget">确定</text>
+    </view>
+    <view class="body">
+        <view class="block" wx:for="{{budget}}" wx:for-item="day" wx:for-index="index1" wx:key="index1">
+            <view class="title">
+                <view class="col-left">第{{index1 + 1}}天</view>
+                <view class="col-right">明细</view>
+            </view>
+            <view class="row" wx:for="{{day}}" wx:for-item="item" wx:for-index="index2" wx:key="index2">
+                <view class="col-left">{{item.name}}</view>
+                <view class="col-right">{{item.price}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

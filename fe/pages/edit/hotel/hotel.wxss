@@ -1,0 +1,7 @@
+@import "../edit.wxss";
+
+.cal{
+  margin-top: 15rpx;
+  border: 1rpx solid grey;
+  border-radius: 6rpx;
+}

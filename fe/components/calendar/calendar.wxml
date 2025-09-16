@@ -1,0 +1,24 @@
+<!-- 日历 -->
+<view class="date-content">
+    <view class="top">
+        <view class="left" hover-class="bclick" catchtap="switchMonth" data-index="-1" wx:if="{{!(selectCalendar[0]==thisMonth[0]&&selectCalendar[1]==thisMonth[1])}}">上个月</view>
+        <view class="year-month">{{selectCalendar[0]+'年'+selectCalendar[1]+'月'}}</view>
+        <view class="right" hover-class="bclick" catchtap="switchMonth" data-index="1" wx:if="{{!((selectCalendar[0]-thisMonth[0])*12+selectCalendar[1]-thisMonth[1]==5)}}">下个月</view>
+    </view>
+    <view class='title'>
+        <view wx:for="{{date}}" wx:key="index" class='title-text {{item == "六" || item == "日" ? "weekMark" : ""}}'>{{item}}</view>
+    </view>
+    <view class="content">
+        <view 
+        wx:for="{{calendar[selectCalendar[0]+'年'+selectCalendar[1]+'月']}}" 
+        wx:key="index" 
+        class='days {{(item.isToday > inTime && item.isToday < outTime) || item.isToday == inTime || item.isToday == outTime ? "day-select" : ""}} {{item.isToday < toDay ? "not-select" : ""}} {{item.isToday == inTime ? "first-selector" : ""}} {{item.isToday == outTime ? "last-selector" : ""}}' 
+        data-id="{{item.dateNum}}"
+        data-day="{{item.isToday}}"
+        bindtap="dayClick">
+            <view class="day-item">{{item.dateNum}}</view>
+            <view class="add" wx:if="{{item.isToday == inTime}}">出发</view>
+            <view class="add" wx:if="{{item.isToday == outTime}}">返回</view>
+        </view>
+    </view>
+</view>

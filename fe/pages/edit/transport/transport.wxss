@@ -1,0 +1,31 @@
+@import "../edit.wxss";
+
+
+.choices{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.choices .item{
+  flex-basis: auto;
+  text-align: center;
+  font-size: .9em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.choices .item .icon{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+
+.choices .item .trans-active{
+  border: 1rpx solid #477fe7;
+}
+
+.choices .item .intro{
+
+}

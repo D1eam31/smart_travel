@@ -1,0 +1,105 @@
+page{
+  background-color: white;
+}
+
+.cuIcon-back{
+  display: none;
+}
+
+.container{
+  padding: 30rpx 35rpx;
+}
+
+.head{
+  margin-top: 10rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+
+.head .icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.head .title{
+  font-size: 1.2em;
+}
+
+.column-input{
+  margin-top: 60rpx;
+}
+
+.column-input .title{
+  display: block;
+}
+
+.column-input .input{
+  height: 70rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid grey;
+  border-radius: 6rpx;
+  margin-top: 15rpx;
+}
+
+.column-input .area{
+  width: 100%;
+  margin-top: 15rpx;
+  border: 1rpx solid grey;
+  border-radius: 5rpx;
+  padding: 20rpx;
+  min-height: 300rpx;
+}
+
+.row-input{
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+}
+
+.row-input .input{
+  height: 60rpx;
+  width: 450rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid grey;
+  border-radius: 6rpx;
+}
+
+.input:hover{
+  border: 1rpx solid #477fe7;
+}
+
+.disabled:hover{
+  border: 1rpx solid grey;
+}
+
+.more{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  height: 0rpx;
+  overflow: hidden;
+}
+
+.more-active{
+  opacity: 1;
+  height: auto;
+  margin-top: 40rpx;
+}
+
+.bottom{
+  margin-top: 30rpx;
+}
+
+.bottom .more-tip{
+  color: #477fe7;
+  display: block;
+  text-align: end;
+}
+
+.bottom .btn{
+  margin: 0;
+  width: 200rpx;
+  line-height: 70rpx;
+}

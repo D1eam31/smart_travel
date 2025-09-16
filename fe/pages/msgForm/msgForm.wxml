@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+	<view slot="content">请填写表单</view>
+</cu-custom>
+
+<view class="msgform">
+    <!-- 目的地 -->
+    <view class="place">
+        <view class="place-title">
+            <text>目的地</text>
+            <text class="title-icon">D</text>
+        </view>
+        <picker class="place-msg" mode="multiSelector" bindcolumnchange="columnChange" bindchange="cityChange" range="{{tempList}}" value="{{tempIndex}}">
+            <text class="msg-1">{{cityList[0][cityIndex[0]]}}</text>
+            <text class="msg-2">{{cityList[1][cityIndex[1]]}}</text>
+        </picker>
+    </view>
+    <!-- 出行日期 -->
+    <view class="time">
+        <view class="time-title">
+            <text>出行时间</text>
+            <text class="title-icon">T</text>
+        </view>
+        <view class="time-msg">
+            <text class="msg-1">{{startTime === '' ? '日历中选择' : startTime}}</text>
+            <text class="msg-2">{{endTime === '' ? '日历中选择' : endTime}}</text>
+            <text class="msg-3">{{days}}</text>
+        </view>
+        <calendar 
+        maxtime="7" 
+        bindmyevent="listener"/>
+    </view>
+    <view class="next">
+        <button class="next-button button" hover-class="click-button" bindtap="handleSubmit">下一步</button>
+    </view>
+</view>
